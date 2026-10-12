@@ -33,3 +33,26 @@ console.log(id === id2); // false
 
 const bigInt = 1234567890123456789012345678901234567890n;   
 console.log(bigInt); // 1234567890123456789012345678901234567890n
+
+
+
+
+// ********************* Memory allocation in JavaScript *********************
+
+//stack memory => stores primitive data types (string, number, boolean, null, undefined, symbol, bigint) and reference to non-primitive data types (object, array, function)
+
+// heap memory => stores non-primitive data types (object, array, function) and their values are stored in heap memory and reference to them is stored in stack memory.
+
+
+let myYoutubeChannel = "Codevolution"; // primitive data type stored in stack memory
+let anotherChannel = myYoutubeChannel; // anotherChannel is a copy of myYoutubeChannel and stored in stack memory   
+
+anotherChannel = "Codevolution2"; // changing the value of anotherChannel does not affect myYoutubeChannel because they are stored in different memory locations
+console.log(myYoutubeChannel); // Codevolution
+console.log(anotherChannel); // Codevolution
+
+let user = {
+    name: "Rohit",
+    email: "rohit@example.com",
+    age: 23
+}; // non-primitive data type stored in heap memory how it is stored in heap memory is that the reference to the object is stored in stack memory and the actual object is stored in heap memory
